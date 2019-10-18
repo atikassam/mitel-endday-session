@@ -1,5 +1,5 @@
 <div>
-    <mat-card class="customer-container">
+    <mat-card class="customer-container" routerLink="{{customer.id}}/orders" >
         <mat-card-content>
         <div *ngIf="customer">
             <h1> Name: {{ customer.name }} </h1>
