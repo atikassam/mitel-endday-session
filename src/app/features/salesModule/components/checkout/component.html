@@ -1,24 +1,49 @@
-<h1>Check out Page</h1>
+<app-container>
+  <h1>Welcome to Check out</h1>
 
-<div class="col-xs-12">
+  <div class="col-xs-12">
 
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Item Name" value="Apple iPhone">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
 
-      <input matInput placeholder="Item Price" value="$100">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Available Quantity" value="10">
-    </mat-form-field>
+    <!-- <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" value="{{item.name}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Price" value="{{item.price}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Description" value="{{item.description}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Available Quantity" value="{{item.count}}">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Category" value="{{item.category}}">
+        </mat-form-field>
+ -->
 
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </form>
 
-</div>
+    <!-- <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+    <form class="example-form">
+      <div class="item-details-column">Name</div>
+      <div class="item-details-column">Price</div>
+      <div class="item-details-column">Description</div>
+      <div class="item-details-column">Count</div>
+      <div class="item-details-column">Category</div>
+      <button type="submit">Add Item</button>
+      <div *ngFor="let item of itemsList" class="item-details-container">
+        <div class="item-details-column">{{item.name}}</div>
+        <div class="item-details-column">{{item.price}}</div>
+        <div class="item-details-column">{{item.description}}</div>
+        <div class="item-details-column">{{item.count}}</div>
+        <div class="item-details-column">{{item.category}}</div>
+        <button type="submit">Add Item</button>
+
+      </div>
+    </form>
+
+  </div>
+</app-container>
