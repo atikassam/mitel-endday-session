@@ -34,17 +34,17 @@ export class CheckoutComponent implements OnInit {
         // this.cartTotal();
     }
 
-    addItem(name, price, count) {
+    addItem(name, price, count, customerId) {
         this.itemsList.push({
             "name": name,
             "price": price,
-            "count": count
+            "count": count,
+            "customerId": customerId
         })
     }
 
     checkOut() {
         this.store.dispatch(OrderAction.StoreOrderData({ orderDetails: this.itemsList }))
-        this._router.navigateByUrl("/sales/invoice");
     }
 
 

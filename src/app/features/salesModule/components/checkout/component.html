@@ -6,6 +6,9 @@
 
 
     <form class="checkoutform">
+      <label for="itemname">Customer ID
+        <input type="text" name="customerId" [(ngModel)]="customerid" placeholder="Name of the product">
+      </label>
       <label for="itemname">item Name
         <input type="text" name="itemname" [(ngModel)]="name" placeholder="Name of the product">
       </label>
@@ -16,7 +19,7 @@
         <input type="number" name="itemcount" [(ngModel)]="count">
       </label>
 
-      <button type="submit" (click)="addItem(name, price, count)">Add item</button>
+      <button type="submit" (click)="addItem(name, price, count, customerid)">Add item</button>
     </form>
 
 
@@ -28,18 +31,19 @@
         <div class="item-details-column">Total</div>
       </div>
       <div *ngFor="let item of itemsList" class="item-details-container">
+        <div class="item-details-column">{{item.customerid}}</div>
         <div class="item-details-column">{{item.name}}</div>
         <div class="item-details-column">{{item.price}}</div>
         <div class="item-details-column">{{item.count}}</div>
         <div class="item-details-column">{{item.count * item.price}}</div>
-        <button type="submit" (click)="removeItem(name, price, count)">Delete</button>
+        <button type="submit" (click)="removeItem(name, price, count, customerid)">Delete</button>
       </div>
       <div class="lastRow">
         <div class="item-details-column">&nbsp;</div>
         <div class="item-details-column">&nbsp;</div>
         <div class="item-details-column">&nbsp;</div>
         <div class="item-details-column">&nbsp;</div>
-        <button type="submit" (click)="checkOut()">Checkout</button>
+        <button type="submit" (click)="checkOut(name, price, count, customerid)">Checkout</button>
       </div>
     </form>
 

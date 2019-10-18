@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers/reducers';
+import { OrderEffects } from './reducers/reducers/effects';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,7 @@ import { reducers } from './reducers/reducers';
         DemoMaterialModule,
         FormsModule,
         StoreModule.forFeature("Order", reducers),
-        EffectsModule.forFeature([])
+        EffectsModule.forFeature([OrderEffects])
     ],
     providers: [getItemListService]
 })
