@@ -5,7 +5,7 @@ import { CustomerListComponent } from './pages/customer-list/component';
 import { CustomerOrdersComponent } from './pages/customer-orders/component';
 import { CustomerComponent } from './components/customer/component';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatButtonModule } from '@angular/material';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
@@ -17,7 +17,7 @@ const routes:Routes=[
     { path:"",component:CustomerListComponent },
     { path:"add",component:CustomerAddComponent },
     { path:"list",component:CustomerListComponent },
-    { path:"orders",component:CustomerOrdersComponent }
+    { path:":id/orders",component:CustomerOrdersComponent }
 ]
 @NgModule({
     declarations: [ CustomerAddComponent,CustomerListComponent,CustomerOrdersComponent,CustomerComponent],
@@ -27,6 +27,7 @@ const routes:Routes=[
         MatCardModule,
         SharedModule,
         FormsModule,
+        MatButtonModule,
         StoreModule.forRoot(customerreducers, {
             metaReducers,
             runtimeChecks: {
