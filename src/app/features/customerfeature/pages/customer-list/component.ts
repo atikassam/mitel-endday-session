@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerSchema } from '../../components/customer/component';
 import { Store } from '@ngrx/store';
 import { CustomerActions } from '../../reducers/customer.actions';
+import * as _ from 'lodash'
+import { map } from 'rxjs/operators';
 @Component({
     selector:'',
     templateUrl:'./component.html',
@@ -12,9 +14,12 @@ export class CustomerListComponent implements OnInit{
     constructor(private store:Store<any>){}
     ngOnInit(): void {
         this.store.dispatch(CustomerActions.GetCustomers());
-        this.store.select('customers').subscribe((state)=>{
-            console.log(state)
-            this.customers=state.all_customers})
+
+        this.store.select('customer')
+        .pipe(map((state) => _.get(state, 'customer.all_customers'))).subscribe((all_customers) => {
+            this.customers=all_customers
+      })
+
     }
     /* customers:CustomerSchema[] = [
         {

@@ -14,6 +14,20 @@ const _customerReducer = createReducer<any>(
     console.log(data, 'customer reducer of set customers');
 
     return { ...state,all_customers: data.customers }
+  }),
+
+  on(CustomerActions.SetCustomer, (state, action) => {
+    let { type, ...data } = action;
+    console.log(data, 'customer reducer of set customer');
+
+    return { ...state,selected_customer: data.customer }
+  }),
+
+  on(CustomerActions.SetCustomerOrders, (state, action) => {
+    let { type, ...data } = action;
+    console.log(data, 'customer reducer of set customer orders');
+
+    return { ...state,customer_all_orders: data.orders }
   })
 );
 

@@ -13,33 +13,42 @@ export class CustomerEffects {
       this.apiService.getCustomers()
       .pipe(
         mergeMap(customers => {
+          console.log(customers)
           return of(CustomerActions.SetCustomers({ customers }))
         }),
         catchError(() => EMPTY)
       )),
-
+    )
+  );  
+  
+  getCustomer$ = createEffect(() => this.actions$.pipe(
     ofType(CustomerActions.GetCustomer),
     mergeMap((action) =>
       this.apiService.getCustomer(action.id)
       .pipe(
         mergeMap(customer => {
+          console.log(customer)
           return of(CustomerActions.SetCustomer({ customer }))
         }),
         catchError(() => EMPTY)
       )),
+    )
+  ); 
 
+  getCustomerOrders$ = createEffect(() => this.actions$.pipe(
     ofType(CustomerActions.GetCustomerOrders),
     mergeMap((action) =>
-      this.apiService.getCustomersOrders(action.id)
-      //new Observable((s) => s.next({ token: 'data' }))
+      this.apiService.getCustomer(action.id)
       .pipe(
         mergeMap(orders => {
+          console.log(orders)
           return of(CustomerActions.SetCustomerOrders({ orders }))
         }),
         catchError(() => EMPTY)
-      ))
+      )),
     )
-  );
+  ); 
+    
 
   constructor(private actions$: Actions, private apiService:CustomerApiService) {
     console.log("Effect constructor");
