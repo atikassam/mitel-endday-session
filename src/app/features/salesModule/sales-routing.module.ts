@@ -6,7 +6,7 @@ import { InvoiceComponent } from './components/invoice/component';
 
 const routes: Routes = [
     { path: '', component: CheckoutComponent },
-    { path: 'invoice', component: InvoiceComponent, pathMatch: "full" }
+    { path: 'invoice/:id', component: InvoiceComponent, pathMatch: "full" }
 ];
 
 @NgModule({

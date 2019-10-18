@@ -12,7 +12,7 @@ const _salesOrderReducer = createReducer<any>(
         let { type, ...data } = action;
         console.log(data, 'Store Order Data');
 
-        return { ...state, ...data }
+        return { ...state, ...data,  }
     })
 );
 

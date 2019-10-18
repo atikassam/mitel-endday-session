@@ -17,7 +17,7 @@ import { OrderAction } from '../../reducers/reducers/actions';
 export class CheckoutComponent implements OnInit {
 
     //@Input() items: ItemDetailsSchema;
-
+    customerid;
 
     itemsList = [];
 
@@ -38,13 +38,17 @@ export class CheckoutComponent implements OnInit {
         this.itemsList.push({
             "name": name,
             "price": price,
-            "count": count,
-            "customerId": customerId
+            "count": count
         })
     }
 
     checkOut() {
-        this.store.dispatch(OrderAction.StoreOrderData({ orderDetails: this.itemsList }))
+        this.store.dispatch(OrderAction.StoreOrderData({
+            orderDetails: {
+                customerid: this.customerid,
+                items: this.itemsList,
+            }
+        }))
     }
 
 

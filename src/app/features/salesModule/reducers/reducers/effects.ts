@@ -10,8 +10,7 @@ export class OrderEffects {
   order$ = createEffect((): any => this.actions$.pipe(
     ofType(OrderAction.StoreOrderData as any),
     mergeMap((action): any => this.apiService.postOrderDetails(action.orderDetails)
-      .pipe(EMPTY)
-    )))
+      .pipe(mergeMap(d => of())))))
 
   constructor(private actions$: Actions, private apiService: getItemListService) {
   }

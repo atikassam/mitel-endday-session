@@ -6,8 +6,7 @@
     },
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCB1c2VyIiwiZW1haWwiOiJleGFtcGxlQGVtYWlsLmNvbSJ9.9e6wvRvGAE8YEHUKhuJEg6g6GjjjArKJBHu-6yTIgfM"
   },
-  "items": [
-    {
+  "items": [{
       "id": 1,
       "image": "http://image.link",
       "name": "Test item 1",
@@ -52,204 +51,35 @@
       "last_updated_by": "User name"
     },
     {
-      "data": [
-        {
-          "name": "Item1",
-          "price": 10,
-          "count": 15
-        }
-      ],
+      "data": [{
+        "name": "Item1",
+        "price": 10,
+        "count": 15
+      }],
       "id": 5
     },
     {
-      "data": [
-        {
-          "name": "item name",
-          "price": 10,
-          "count": 100
-        }
-      ],
+      "data": [{
+        "name": "item name",
+        "price": 10,
+        "count": 100
+      }],
       "id": 6
     }
   ],
-  "orders": [
-    {
+  "orders": [{
+    "id": 1,
+    "customer": {
       "id": 1,
-      "customer": {
-        "id": 1,
-        "name": "Customer name",
-        "address": "Customer address"
-      },
-      "items": [
-        {
-          "Id": "",
-          "count": "",
-          "price": ""
-        }
-      ],
-      "total": "100",
-      "date": 123456789
+      "name": "Customer name",
+      "address": "Customer address"
     },
-    {
-      "customer": {
-        "id": 1,
-        "name": "Customer name",
-        "address": "Customer address"
-      },
-      "items": [
-        {
-          "Id": "",
-          "count": "",
-          "price": ""
-        }
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 2
-    },
-    {
-      "customer": {
-        "name": "Customer name",
-        "address": "Customer address"
-      },
-      "items": [
-        {
-          "Id": "",
-          "count": "",
-          "price": ""
-        }
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 3
-    },
-    {
-      "customer": {
-        "name": "Customer name",
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 4
-    },
-    {
-      "customer": {
-        "name": "Customer name",
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 5
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 6
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 7
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 8
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 9
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 10
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 11
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 12
-    },
-    {
-      "customer": {
-        "address": "Customer address"
-      },
-      "items": [
-        {}
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 13
-    },
-    {
-      "customer": {
-        "id": "15",
-        "name": "12",
-        "address": "Customer address"
-      },
-      "items": [
-        {
-          "count": 12,
-          "price": 12
-        }
-      ],
-      "total": "100",
-      "date": 123456789,
-      "id": 14
-    }
-  ]
+    "items": [{
+      "Id": "",
+      "count": "",
+      "price": ""
+    }],
+    "total": "100",
+    "date": 123456789
+  }]
 }
