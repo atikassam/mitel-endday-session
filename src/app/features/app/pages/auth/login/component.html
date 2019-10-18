@@ -1,0 +1,38 @@
+<div class="main-container">
+  <mat-card class="login-container">
+    <mat-card-title>
+      Login
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <form #formElement="ngForm">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" required email name="email" [(ngModel)]="credential.email"
+                 #email="ngModel">
+
+          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" required name="password"
+                 [(ngModel)]="credential.password"
+                 #password="ngModel">
+
+          <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="login-actions">
+          <button (click)="onSubmit()" mat-flat-button color="primary" [disabled]="!formElement.form.valid">Login</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

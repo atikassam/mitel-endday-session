@@ -16,6 +16,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "./shared/shared.module";
 import { DemoMaterialModule } from './shared/material-modules.module';
+import {ApiServices} from "./services/api.services";
+import {HttpCallInterceptor} from "./services/http.interceptor";
+import {AuthGuard} from "./services/auth.guard";
 
 
 @NgModule({
@@ -44,7 +47,7 @@ import { DemoMaterialModule } from './shared/material-modules.module';
     }),
     EffectsModule.forRoot([])
   ],
-  providers: [],
+  providers: [ ApiServices, AuthGuard, {useClass: HttpCallInterceptor, multi: true, provide: HTTP_INTERCEPTORS} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
