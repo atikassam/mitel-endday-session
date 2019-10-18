@@ -17,6 +17,13 @@ export class CustomerApiService {
     
     })
   }
+
+  getCustomer(id) {
+    console.log("From API Service getCustomers");
+    return this.http.get(`${CustomerApiService._BASE_}/customers/${id}`, {
+    
+    })
+  }
   addCustomer(customer) {
     console.log("From API Service addCustomer");
     return this.http.post(`${CustomerApiService._BASE_}/customers`, {
@@ -24,7 +31,7 @@ export class CustomerApiService {
     })
   }
   
-  getOrders(customerid) {
+  getCustomersOrders(customerid) {
     console.log("From API Service getOrders of customer : "+customerid);
     return this.http.get(`${CustomerApiService._BASE_}/customer/${customerid}/orders`, {
     })

@@ -11,10 +11,30 @@ export class CustomerEffects {
     ofType(CustomerActions.GetCustomers),
     mergeMap((action) =>
       this.apiService.getCustomers()
-      //new Observable((s) => s.next({ token: 'data' }))
       .pipe(
         mergeMap(customers => {
           return of(CustomerActions.SetCustomers({ customers }))
+        }),
+        catchError(() => EMPTY)
+      )),
+
+    ofType(CustomerActions.GetCustomer),
+    mergeMap((action) =>
+      this.apiService.getCustomer(action.id)
+      .pipe(
+        mergeMap(customer => {
+          return of(CustomerActions.SetCustomer({ customer }))
+        }),
+        catchError(() => EMPTY)
+      )),
+
+    ofType(CustomerActions.GetCustomerOrders),
+    mergeMap((action) =>
+      this.apiService.getCustomersOrders(action.id)
+      //new Observable((s) => s.next({ token: 'data' }))
+      .pipe(
+        mergeMap(orders => {
+          return of(CustomerActions.SetCustomerOrders({ orders }))
         }),
         catchError(() => EMPTY)
       ))

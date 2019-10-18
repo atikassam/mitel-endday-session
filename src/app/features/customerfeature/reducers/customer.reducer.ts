@@ -3,7 +3,9 @@ import { CustomerActions } from './customer.actions';
 import { CustomerApiService } from '../services/customerapi.service';
 
 const initialState = {
-  all_customers: null
+  all_customers: null,
+  customer_all_orders:null,
+  selected_customer:null,
 }
 const _customerReducer = createReducer<any>(
   initialState,
