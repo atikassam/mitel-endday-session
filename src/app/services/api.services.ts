@@ -4,5 +4,5 @@ import {Injectable} from "@angular/core";
   providedIn: "root"
 })
 export class ApiServices {
-
+  static readonly _BASE_ = 'http://localhost:3000'
 }
