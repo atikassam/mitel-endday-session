@@ -7,8 +7,8 @@ import {ItemDetailsComponent} from './pages/item-details/item-details.component'
 
 import { AddItemComponent } from './pages/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
-import { DemoMaterialModule } from '../salesModule/shared/material-modules.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import {DemoMaterialModule} from "../../shared/material-modules.module";
 
 
 const routes: Routes = [
