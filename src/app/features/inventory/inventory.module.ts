@@ -7,11 +7,11 @@ import { ItemDetailsComponent } from './pages/item-details/item-details.componen
 
 import { AddItemComponent } from './pages/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
-import { DemoMaterialModule } from '../salesModule/shared/material-modules.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from 'src/app/reducers';
 import { EffectsModule } from '@ngrx/effects';
+import { DemoMaterialModule } from 'src/app/shared/material-modules.module';
 
 
 const routes: Routes = [
