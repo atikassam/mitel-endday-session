@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SalesComponent } from './components/component';
+import { CheckoutComponent } from './components/checkout/component';
+import { InvoiceComponent } from './components/invoice/component';
 
 @NgModule({
     declarations: [
-        SalesComponent
+        CheckoutComponent,
+        InvoiceComponent
     ],
     imports: [
         BrowserModule
