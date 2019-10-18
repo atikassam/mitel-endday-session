@@ -10,22 +10,24 @@ import {HomeComponent} from "./pages/home/component";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {ReactiveFormsModule} from "@angular/forms";
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
-import { EffectsModule } from '@ngrx/effects';
+// import { StoreModule } from '@ngrx/store';
+// import { reducers, metaReducers } from './reducers';
+// import { EffectsModule } from '@ngrx/effects';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {SharedModule} from "./shared/shared.module";
+// import {SharedModule} from "./shared/shared.module";
+import {ApiServices} from "./services/api.services";
+// import {AppEffects} from "./reducers/app/effects";
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
+    // SharedModule,
     ChartsModule,
     BrowserAnimationsModule,
     MatCardModule,
@@ -33,16 +35,16 @@ import {SharedModule} from "./shared/shared.module";
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    }),
-    EffectsModule.forRoot([])
+    // StoreModule.forRoot(reducers, {
+    //   metaReducers,
+    //   runtimeChecks: {
+    //     strictStateImmutability: true,
+    //     strictActionImmutability: true
+    //   }
+    // }),
+    // EffectsModule.forRoot([ AppEffects ])
   ],
-  providers: [ ],
+  providers: [ ApiServices ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

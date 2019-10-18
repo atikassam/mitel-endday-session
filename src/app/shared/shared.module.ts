@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {MatCardModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
+import {ContainerComponent} from "./components/container/component";
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ ContainerComponent ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [],
