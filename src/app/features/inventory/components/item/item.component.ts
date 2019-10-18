@@ -11,5 +11,8 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
   }
+  onClickItem() {
+ 
+  }
 
 }
