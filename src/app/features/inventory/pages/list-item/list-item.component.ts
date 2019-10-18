@@ -4,6 +4,7 @@ import { getItemListService } from 'src/app/features/salesModule/services/getIte
 import { InventoryAction } from '../../reducers/inventory.action';
 import * as _ from 'lodash'
 import {map} from "rxjs/operators";
+import { Router } from '@angular/router';
 
 interface ItemSchema {
   [key: string]: any
@@ -20,7 +21,7 @@ interface ItemSchema {
 
 export class ListItemComponent implements OnInit {
   public items: any;
-  constructor(private store:Store<any>) { }
+  constructor(private store:Store<any>,private router:Router) { }
 
   ngOnInit() {
     // this.store.subscribe(console.log)
@@ -34,6 +35,10 @@ export class ListItemComponent implements OnInit {
       })
     this.store.dispatch(InventoryAction.GetItems());
     
+  }
+  
+  onAdd() {
+    this.router.navigate([`/inventory/add`]);
   }
 
 }

@@ -1,9 +1,26 @@
 <app-container>
+    <br />
     <div>
-        <div>Item Name: {{item.name}}</div> 
-        <div>Description:  {{item.description}} </div> 
-        <div>Price:     {{item.price}} </div> 
-        <div>Quantity:  {{item.quantity}} </div> 
-        <br/>
+        <button (click)="onAdd()" mat-flat-button color="primary">Add Item</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button (click)="onUpdate()" mat-flat-button color="primary">Update Item</button>&nbsp;&nbsp;&nbsp;
+        <button (click)="onDelete()" mat-flat-button color="primary">Delete Item</button>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div>
+        <mat-card class="item-container">
+            <mat-card-title>
+                Item Name: {{item.name}}
+            </mat-card-title>
+            <mat-card-content>
+                <br />
+                <div>Description: {{item.description}} </div>
+                <br />
+                <div>Price: {{item.price}} </div>
+                <br />
+                <div>Quantity: {{item.quantity}} </div>
+                <br />
+            </mat-card-content>
+        </mat-card>
+
+        <br />
     </div>
 </app-container>

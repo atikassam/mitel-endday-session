@@ -15,7 +15,6 @@ export class ItemComponent implements OnInit {
   }
   onClickItem() {
     this.router.navigate([`/inventory/details/${ this.item.id }`]);
-    
   }
 
 }

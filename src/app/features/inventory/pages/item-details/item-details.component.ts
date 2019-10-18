@@ -44,7 +44,7 @@ export class ItemDetailsComponent implements OnInit {
   ]
   @Input() id:string;
   private item: ItemDetailSchema;
-  constructor(private router:ActivatedRoute, private store:Store<any>) { }
+  constructor(private router:ActivatedRoute, private store:Store<any>,private router1:Router) { }
 
   ngOnInit() {
     // this.router.params.subscribe((value=>this.getItemDetailsById(value.id)));
@@ -69,4 +69,16 @@ export class ItemDetailsComponent implements OnInit {
     this.item = item;
   }
 
+  
+  onAdd() {
+    this.router1.navigate([`/inventory/add`]);
+  }
+  
+  onUpdate() {
+    // this.router1.navigate([`/inventory/add`]);
+  }
+  
+  onDelete() {
+    //this.router.navigate([`/inventory/add`]);
+  }
 }
