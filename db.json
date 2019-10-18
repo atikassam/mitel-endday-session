@@ -6,23 +6,24 @@
     },
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCB1c2VyIiwiZW1haWwiOiJleGFtcGxlQGVtYWlsLmNvbSJ9.9e6wvRvGAE8YEHUKhuJEg6g6GjjjArKJBHu-6yTIgfM"
   },
-  "customers":[
+  "customers": [
     {
-        "id":1,
-        "name":"customer1",
-        "email":"email1",
-        "phoneno":1234567890,
-        "address":"addres1"
+      "id": 1,
+      "name": "customer1",
+      "email": "email1",
+      "phoneno": 1234567890,
+      "address": "addres1"
     },
     {
-      "id":2,
-      "name":"customer2",
-      "email":"email1",
-      "phoneno":1234567890,
-      "address":"addres1"
+      "id": 2,
+      "name": "customer2",
+      "email": "email1",
+      "phoneno": 1234567890,
+      "address": "addres1"
     }
-],
-  "items": [{
+  ],
+  "items": [
+    {
       "id": 1,
       "image": "http://image.link",
       "name": "Test item 1",
@@ -67,35 +68,300 @@
       "last_updated_by": "User name"
     },
     {
-      "data": [{
-        "name": "Item1",
-        "price": 10,
-        "count": 15
-      }],
+      "data": [
+        {
+          "name": "Item1",
+          "price": 10,
+          "count": 15
+        }
+      ],
       "id": 5
     },
     {
-      "data": [{
-        "name": "item name",
-        "price": 10,
-        "count": 100
-      }],
+      "data": [
+        {
+          "name": "item name",
+          "price": 10,
+          "count": 100
+        }
+      ],
       "id": 6
     }
   ],
-  "orders": [{
-    "id": 1,
-    "customer": {
+  "orders": [
+    {
       "id": 1,
-      "name": "Customer name",
-      "address": "Customer address"
+      "customer": {
+        "id": 1,
+        "name": "Customer name",
+        "address": "Customer address"
+      },
+      "items": [
+        {
+          "Id": "",
+          "count": "",
+          "price": ""
+        }
+      ],
+      "total": "100",
+      "date": 123456789
     },
-    "items": [{
-      "Id": "",
-      "count": "",
-      "price": ""
-    }],
-    "total": "100",
-    "date": 123456789
-  }]
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "total": "100",
+      "date": 123456789,
+      "id": 2
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405166206,
+      "id": 3
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405294179,
+      "id": 4
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405383090,
+      "id": 5
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405430830,
+      "id": 6
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405476502,
+      "id": 7
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405507263,
+      "id": 8
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405565671,
+      "id": 9
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405595961,
+      "id": 10
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "Apple watch",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "Apple TV",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405663058,
+      "id": 11
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "Apple ",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "Apple ",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405719478,
+      "id": 12
+    },
+    {
+      "customer": {
+        "id": 1,
+        "name": "customer1",
+        "address": "addres1"
+      },
+      "items": [
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        },
+        {
+          "name": "12",
+          "price": 12,
+          "count": 12
+        }
+      ],
+      "total": "100",
+      "date": 1571405750160,
+      "id": 13
+    }
+  ]
 }

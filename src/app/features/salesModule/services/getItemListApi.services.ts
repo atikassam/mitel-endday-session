@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 
@@ -21,17 +21,17 @@ export class getItemListService {
     postOrderDetails(item): any {
         console.log("Item", item);
         // debugger;
-        return this._http.get(`http://localhost:3000/customer/${item.customerid}`)
+        return this._http.get(`http://localhost:3000/customers/${item.customerid}`)
             .pipe(
-                map((d: any) => this._http.post(`http://localhost:3000/orders`, {
+                mergeMap((d: any) => this._http.post(`http://localhost:3000/orders`, {
                     "customer": {
                         "id": d.id,
                         "name": d.name,
                         "address": d.address
                     },
-                    "items": d.items,
+                    "items": item.items,
                     "total": "100",
-                    "date": 123456789
+                    "date": Date.now()
                 }).pipe(map((data: any) => {
                     console.log("data", data);
                     this.router.navigate(['/sales/invoice', data.id])
