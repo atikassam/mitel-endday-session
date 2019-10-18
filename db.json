@@ -6,6 +6,22 @@
     },
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCB1c2VyIiwiZW1haWwiOiJleGFtcGxlQGVtYWlsLmNvbSJ9.9e6wvRvGAE8YEHUKhuJEg6g6GjjjArKJBHu-6yTIgfM"
   },
+  "customers":[
+    {
+        "id":1,
+        "name":"customer1",
+        "email":"email1",
+        "phoneno":1234567890,
+        "address":"addres1"
+    },
+    {
+      "id":2,
+      "name":"customer2",
+      "email":"email1",
+      "phoneno":1234567890,
+      "address":"addres1"
+    }
+],
   "items": [{
       "id": 1,
       "image": "http://image.link",
