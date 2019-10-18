@@ -48,6 +48,20 @@ export class CustomerEffects {
       )),
     )
   ); 
+
+  addCustomer$ = createEffect(() => this.actions$.pipe(
+    ofType(CustomerActions.addCustomer),
+    mergeMap((action) =>
+      this.apiService.addCustomer(action.customer)
+      .pipe(
+        mergeMap(orders => {
+          console.log(orders)
+         return of(CustomerActions.GetCustomers())
+        }),
+        catchError(() => EMPTY)
+      )),
+    )
+  ); 
     
 
   constructor(private actions$: Actions, private apiService:CustomerApiService) {

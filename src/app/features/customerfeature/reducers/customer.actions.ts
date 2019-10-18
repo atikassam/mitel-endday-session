@@ -11,5 +11,6 @@ export class CustomerActions {
   public static readonly GetCustomerOrders = createAction('[Customer orders api] get customer orders List',props<{ id: any }>())
   public static readonly SetCustomerOrders = createAction('[ngrx store] set customer Orders List', props<{ orders: any }>())
 
-  public static readonly addCustomer=createAction('[Customer api] add customer')
+  public static readonly addCustomer=createAction('[Customer api] add customer',props<{ customer: any }>())
+  //public static readonly addCustomer=createAction('[Customer api] add customer',props<{ customer: any }>())
 }
