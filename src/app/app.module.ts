@@ -15,11 +15,10 @@ import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "./shared/shared.module";
-import { DemoMaterialModule } from './features/salesModule/shared/material-modules.module';
+import { DemoMaterialModule } from './shared/material-modules.module';
 import {ApiServices} from "./services/api.services";
 import {HttpCallInterceptor} from "./services/http.interceptor";
 import {AuthGuard} from "./services/auth.guard";
-
 
 
 @NgModule({
