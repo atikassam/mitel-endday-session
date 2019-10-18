@@ -1,1 +1,6 @@
-its customer list
+<app-container>
+    <h2 class="list-title">Customer list</h2>
+    <div class="list-container">
+    <app-customer  *ngFor="let customer of customers" [customer]="customer"></app-customer>
+    </div>
+</app-container>
