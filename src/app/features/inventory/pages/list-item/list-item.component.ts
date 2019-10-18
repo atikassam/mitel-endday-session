@@ -14,7 +14,7 @@ interface ItemSchema {
 
 
 export class ListItemComponent implements OnInit {
-  items: ItemSchema[] = [
+  public items: ItemSchema[] = [
     {
       _id: 1,
       name: "Mobile",
