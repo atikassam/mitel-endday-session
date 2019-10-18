@@ -4,8 +4,9 @@ import { HomeComponent } from "./pages/home/component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'inventory', loadChildren: () => import('./features/inventory/inventory.module').then(m => m.InventoryModule) },
+  { path: 'customers', loadChildren: () => import('./features/customerfeature/customerfeature.module').then(e => e.CustomerModule) },
   { path: 'sales', loadChildren: () => import('./features/salesModule/sales.module').then(e => e.SalesModule) },
-  // { path: 'sales', loadChildren: 'features/salesModule/sales.module/#SalesModule' }
   { path: 'app', loadChildren: () => import('./features/app/app.module').then((m => m.ApplicationModule)) }
 ];
 
