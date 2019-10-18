@@ -5,6 +5,7 @@ import { SalesRoutingModule } from './sales-routing.module';
 import { CommonModule } from '@angular/common';
 import { DemoMaterialModule } from '../../shared/material-modules.module';
 import { getItemListService } from './services/getItemListApi.services';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { getItemListService } from './services/getItemListApi.services';
     imports: [
         CommonModule,
         SalesRoutingModule,
-        DemoMaterialModule
+        SharedModule,
+        DemoMaterialModule,
     ],
     providers: [getItemListService]
 })
