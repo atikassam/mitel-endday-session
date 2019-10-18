@@ -3,7 +3,6 @@ import {LoginComponent} from "./pages/login/component";
 import {Route, Router, RouterModule} from "@angular/router";
 import {SharedModule} from "../../shared/shared.module";
 import {CommonModule} from "@angular/common";
-import {AppModule} from "../../../../../store/src/app/app.module";
 
 const routes: Route[] = [
   // { path: '', component: LoginComponent },
@@ -15,8 +14,7 @@ const routes: Route[] = [
   imports: [
     RouterModule.forChild(routes),
     SharedModule,
-    CommonModule,
-    AppModule
+    CommonModule
   ],
   exports: [ RouterModule ]
 })
