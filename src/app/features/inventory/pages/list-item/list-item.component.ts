@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { getItemListService } from 'src/app/features/salesModule/services/getItemListApi.services';
+import { InventoryAction } from '../../reducers/inventory.action';
 
 interface ItemSchema {
   [key: string]: any
@@ -34,9 +37,10 @@ export class ListItemComponent implements OnInit {
       quantity: 1000
     }
   ]
-  constructor() { }
+  constructor(private store:Store<any>) { }
 
   ngOnInit() {
+    this.store.dispatch(InventoryAction.GetItems)
   }
 
 }
