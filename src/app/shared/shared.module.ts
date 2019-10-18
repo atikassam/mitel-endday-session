@@ -1,15 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {MatCardModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
+import {ContainerComponent} from "./components/container/component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ ContainerComponent ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
-  providers: [],
-  bootstrap: [],
-  exports: []
+  providers: [ ],
+  bootstrap: [ ],
+  exports: [ ContainerComponent ]
 })
 export class SharedModule { }
