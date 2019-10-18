@@ -3,15 +3,15 @@ import { CustomerActions } from './customer.actions';
 import { CustomerApiService } from '../services/customerapi.service';
 
 const initialState = {
-  selected_items: null
+  all_customers: null
 }
 const _customerReducer = createReducer<any>(
   initialState,
   on(CustomerActions.SetCustomers, (state, action) => {
     let { type, ...data } = action;
-    console.log(data, 'auth reducer');
+    console.log(data, 'customer reducer of set customers');
 
-    return { ...state,selected_items: data.customers }
+    return { ...state,all_customers: data.customers }
   })
 );
 

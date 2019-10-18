@@ -21,13 +21,8 @@ export class CustomerEffects {
     )
   );
 
-
-
-  
-
-  constructor(private actions$,actions1$: Actions, private apiService:CustomerApiService) {
+  constructor(private actions$: Actions, private apiService:CustomerApiService) {
     console.log("Effect constructor");
     this.getCustomerList$.subscribe(console.log)
-    
   }
 }

@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CustomerSchema } from '../../components/customer/component';
+import { Store } from '@ngrx/store';
+import { CustomerActions } from '../../reducers/customer.actions';
 @Component({
     selector:'',
     templateUrl:'./component.html',
     styleUrls:['./component.scss']
 })
-export class CustomerListComponent{
-    customers:CustomerSchema[] = [
+export class CustomerListComponent implements OnInit{
+    customers:CustomerSchema[]
+    constructor(private store:Store<any>){}
+    ngOnInit(): void {
+        this.store.dispatch(CustomerActions.GetCustomers());
+        let result=this.store.select('customers')
+        result.subscribe(console.log)
+        result.subscribe((state)=>{
+            console.log(state)
+            this.customers=state.all_customers})
+    }
+    /* customers:CustomerSchema[] = [
         {
             id:1,
             name:"customer1",
@@ -21,5 +33,5 @@ export class CustomerListComponent{
             phoneno:2234567890,
             address:"addres2"
         }
-    ]
+    ] */
 }

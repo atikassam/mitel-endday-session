@@ -6,15 +6,20 @@
     },
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCB1c2VyIiwiZW1haWwiOiJleGFtcGxlQGVtYWlsLmNvbSJ9.9e6wvRvGAE8YEHUKhuJEg6g6GjjjArKJBHu-6yTIgfM"
   },
-  "items": [{
-    "id": 1,
-    "image": "http://image.link",
-    "name": "Test item 1",
-    "description": "this item is a test item",
-    "price": 900,
-    "count": 100,
-    "last_update": 1234567890,
-    "category": "unknown",
-    "last_updated_by": "User name"
-  }]
+  "customers":[
+    {
+        "id":1,
+        "name":"customer1",
+        "email":"email1",
+        "phoneno":1234567890,
+        "address":"addres1"
+    },
+    {
+      "id":2,
+      "name":"customer2",
+      "email":"email1",
+      "phoneno":1234567890,
+      "address":"addres1"
+    }
+]
 }

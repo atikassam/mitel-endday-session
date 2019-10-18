@@ -28,14 +28,8 @@ const routes:Routes=[
         SharedModule,
         FormsModule,
         MatButtonModule,
-        StoreModule.forRoot(customerreducers, {
-            metaReducers,
-            runtimeChecks: {
-              strictStateImmutability: true,
-              strictActionImmutability: true
-            }
-          }),
-        EffectsModule.forRoot([CustomerEffects])],
+        StoreModule.forFeature('customer',customerreducers),
+        EffectsModule.forFeature([CustomerEffects])],
     exports: [ RouterModule ],
 })
 export class CustomerModule{
