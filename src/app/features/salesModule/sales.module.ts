@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { DemoMaterialModule } from '../../shared/material-modules.module';
 import { getItemListService } from './services/getItemListApi.services';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
         SalesRoutingModule,
         SharedModule,
         DemoMaterialModule,
+        FormsModule
     ],
     providers: [getItemListService]
 })

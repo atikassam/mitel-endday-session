@@ -4,45 +4,43 @@
   <div class="col-xs-12">
 
 
-    <!-- <mat-form-field class="example-full-width">
-          <input matInput placeholder="Name" value="{{item.name}}">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Price" value="{{item.price}}">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Description" value="{{item.description}}">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Available Quantity" value="{{item.count}}">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Category" value="{{item.category}}">
-        </mat-form-field>
- -->
+
+    <form class="checkoutform">
+      <label for="itemname">item Name
+        <input type="text" name="itemname" [(ngModel)]="name" placeholder="Name of the product">
+      </label>
+      <label for="itemprice">item Price
+        <input type="number" name="itemprice" [(ngModel)]="price" placeholder="Price of the product">
+      </label>
+      <label for="itemcount">Item Count
+        <input type="number" name="itemcount" [(ngModel)]="count">
+      </label>
+
+      <button type="submit" (click)="addItem(name, price, count)">Add item</button>
+    </form>
 
 
-    <!-- <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field> -->
-    <form class="example-form">
-      <div class="item-details-column">Name</div>
-      <div class="item-details-column">Price</div>
-      <div class="item-details-column">Description</div>
-      <div class="item-details-column">Count</div>
-      <div class="item-details-column">Category</div>
-      <button type="submit">Add Item</button>
+    <form class="example-form" *ngIf="itemsList">
+      <div class="titleRow">
+        <div class="item-details-column">Name</div>
+        <div class="item-details-column">Price</div>
+        <div class="item-details-column">Count</div>
+        <div class="item-details-column">Total</div>
+      </div>
       <div *ngFor="let item of itemsList" class="item-details-container">
         <div class="item-details-column">{{item.name}}</div>
         <div class="item-details-column">{{item.price}}</div>
-        <div class="item-details-column">{{item.description}}</div>
         <div class="item-details-column">{{item.count}}</div>
-        <div class="item-details-column">{{item.category}}</div>
-        <button type="submit">Add Item</button>
-
+        <div class="item-details-column">{{item.count * item.price}}</div>
+        <button type="submit" (click)="removeItem(name, price, count)">Delete</button>
       </div>
+      <!-- <div class="lastRow">
+        <div class="item-details-column">&nbsp;</div>
+        <div class="item-details-column">&nbsp;</div>
+        <div class="item-details-column">Total Amount</div>
+        <div class="item-details-column">{{total}}</div>
+        <button type="submit" (click)="removeItem(name, price, count)">Checkout</button>
+      </div> -->
     </form>
 
   </div>
