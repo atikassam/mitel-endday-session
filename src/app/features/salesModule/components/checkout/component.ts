@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
-
+import { Component, Input } from "@angular/core";
+import { ItemDetailsSchema } from '../../shared/item.interface';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -9,5 +10,8 @@ import { Component } from "@angular/core";
 })
 
 export class CheckoutComponent {
+
+    @Input() items: ItemDetailsSchema
+
 
 }

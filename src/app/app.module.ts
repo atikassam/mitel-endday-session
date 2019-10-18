@@ -15,6 +15,7 @@ import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "./shared/shared.module";
+import { DemoMaterialModule } from './features/salesModule/shared/material-modules.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { SharedModule } from "./shared/shared.module";
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DemoMaterialModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
