@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CheckoutComponent } from './components/checkout/component';
 import { InvoiceComponent } from './components/invoice/component';
+import { SalesRoutingModule } from './sales-routing.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -9,7 +10,8 @@ import { InvoiceComponent } from './components/invoice/component';
         InvoiceComponent
     ],
     imports: [
-        BrowserModule
+        CommonModule,
+        SalesRoutingModule
     ],
     providers: []
 })
