@@ -21,5 +21,48 @@
       "phoneno":1234567890,
       "address":"addres1"
     }
-]
+],
+  "items": [{
+      "id": 1,
+      "image": "http://image.link",
+      "name": "Test item 1",
+      "description": "this item is a test item",
+      "price": 900,
+      "count": 100,
+      "last_update": 1234567890,
+      "category": "unknown",
+      "last_updated_by": "User name"
+    },
+    {
+      "id": 2,
+      "image": "http://image.link",
+      "name": "Test item 2",
+      "description": "this item is a test item",
+      "price": 100,
+      "count": 100,
+      "last_update": 1234567890,
+      "category": "unknown",
+      "last_updated_by": "User name"
+    }, {
+      "id": 3,
+      "image": "http://image.link",
+      "name": "Test item 3",
+      "description": "this item is a test item",
+      "price": 400,
+      "count": 100,
+      "last_update": 1234567890,
+      "category": "unknown",
+      "last_updated_by": "User name"
+    }, {
+      "id": 4,
+      "image": "http://image.link",
+      "name": "Test item 4",
+      "description": "this item is a test item",
+      "price": 230,
+      "count": 100,
+      "last_update": 1234567890,
+      "category": "unknown",
+      "last_updated_by": "User name"
+    }
+  ]
 }
