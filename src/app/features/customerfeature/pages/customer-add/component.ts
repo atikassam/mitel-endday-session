@@ -6,7 +6,7 @@ import { CustomerSchema } from '../../components/customer/component';
     styleUrls:['./component.scss']
 })
 export class CustomerAddComponent{
-    customer: CustomerSchema  
+    customer: any={} 
 
     onSubmit() {
         console.log(this.customer, 'com')
