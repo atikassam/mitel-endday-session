@@ -10,7 +10,7 @@ const routes:Routes=[
     { path:"orders",component:CustomerOrdersComponent }
 ]
 @NgModule({
-    declarations: [ CustomerAddComponent,CustomerListComponent,CustomerOrdersComponent ],
+    declarations: [ CustomerAddComponent,CustomerListComponent,CustomerOrdersComponent],
     imports: [ RouterModule.forChild(routes) ],
     exports: [ RouterModule ],
 })
