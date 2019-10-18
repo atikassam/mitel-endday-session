@@ -1,8 +1,10 @@
 <app-container>
-  
-<p>list-item works!</p>
 <h2>Item list</h2>
+<button (click)="onAdd()" mat-flat-button color="primary" >Add Item</button>
+<br/>
+<br/>
 <div>
-  <app-item  *ngFor="let item of items" [item]="item"></app-item>
+ <app-item  *ngFor="let item of items" [item]="item"></app-item>
 </div>
+<br/>
 </app-container>

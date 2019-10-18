@@ -1,7 +1,12 @@
-
-<div (click)= "onClickItem()">
-    <div>Item Name: {{item.name}}</div> 
-    <div>Price:     {{item.price}} </div> 
-    <div>Quantity:  {{item.quantity}} </div> 
-    <br/>
+<div routerLink="/inventory/details/{{item.id}}">
+    <mat-card class="item-container">
+        <mat-card-title>
+            Item Name: {{item.name}}
+        </mat-card-title>
+        <mat-card-content>
+            <div>Price: {{item.price}} </div>
+            <div>Quantity: {{item.quantity}} </div>
+            <br />
+        </mat-card-content>
+    </mat-card>
 </div>

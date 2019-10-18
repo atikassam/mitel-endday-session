@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InventoryAction } from '../../reducers/inventory.action';
+import { Store } from '@ngrx/store';
 
 @Component({
   //selector: 'app-add-item',
@@ -6,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-item.component.scss']
 })
 export class AddItemComponent implements OnInit {
-  inventory:any = {}
+  item:any = {}
   
-  constructor() { }
+  constructor(private store:Store<any>) { }
 
   ngOnInit() {
   }
 
   onAddSubmit(){
-    console.log(this.inventory);
+    console.log(this.item);
+    this.store.dispatch(InventoryAction.AddItems({ item: this.item }));
+
   }
 
 }

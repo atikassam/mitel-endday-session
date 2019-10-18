@@ -1,6 +1,11 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ListItemComponent } from '../list-item/list-item.component';
+import { Store } from '@ngrx/store';
+import { InventoryAction } from '../../reducers/inventory.action';
+import { map } from 'rxjs/operators';
+import * as _ from 'lodash';
+
 
 interface ItemDetailSchema {
   [key: string]: any
@@ -39,13 +44,41 @@ export class ItemDetailsComponent implements OnInit {
   ]
   @Input() id:string;
   private item: ItemDetailSchema;
-  constructor(private router:ActivatedRoute, ) { }
+  constructor(private router:ActivatedRoute, private store:Store<any>,private router1:Router) { }
 
   ngOnInit() {
-    this.router.params.subscribe((value=>this.getItemDetailsById(value.id)));
+    // this.router.params.subscribe((value=>this.getItemDetailsById(value.id)));
+
+    this.router.params.subscribe((value => {
+      // this.store.select('store')
+      //   .subscribe((state) => {
+      //     console.log(state)
+      //     this.setData(state.selected_item)
+      //   })
+      this.store.select('inventory')
+      .pipe(map((d) => _.get(d, 'inventoryreducer.selected_item')))
+      .subscribe((selected_item) => {
+        console.log(selected_item,"item details page")
+        if(selected_item)
+        this.getItemDetailsById(selected_item)
+      })
+      this.store.dispatch(InventoryAction.GetItemDetail({ id: value.id }));
+    }))
   }
-  getItemDetailsById(id:number){
-    this.item = this.items[id-1];
+  getItemDetailsById(item:any){
+    this.item = item;
   }
 
+  
+  onAdd() {
+    this.router1.navigate([`/inventory/add`]);
+  }
+  
+  onUpdate() {
+    // this.router1.navigate([`/inventory/add`]);
+  }
+  
+  onDelete() {
+    //this.router.navigate([`/inventory/add`]);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-item',
@@ -8,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class ItemComponent implements OnInit {
   @Input() item
-  constructor(private router: Router) { }
+  constructor(private router: Router,private store:Store<any>) { }
 
   ngOnInit() {
   }
   onClickItem() {
-    this.router.navigate([`/inventory/details/${ this.item._id }`]);
+    this.router.navigate([`/inventory/details/${ this.item.id }`]);
   }
 
 }
