@@ -3,6 +3,7 @@ import { ItemDetailsSchema } from '../../shared/item.interface';
 import { MatInputModule } from '@angular/material/input';
 import { getItemListService } from '../../services/getItemListApi.services';
 import { ItemDetailsComponent } from 'src/app/features/inventory/pages/item-details/item-details.component';
+import { Router, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CheckoutComponent implements OnInit {
 
     itemsList = [];
 
-    constructor(private getItemListService: getItemListService) {
+    constructor(private getItemListService: getItemListService, private _router: Router) {
 
     }
 
@@ -39,6 +40,10 @@ export class CheckoutComponent implements OnInit {
             "count": count
         })
 
+    }
+
+    checkOut() {
+        this._router.navigateByUrl("/sales/invoice");
     }
 
 

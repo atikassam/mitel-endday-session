@@ -34,13 +34,13 @@
         <div class="item-details-column">{{item.count * item.price}}</div>
         <button type="submit" (click)="removeItem(name, price, count)">Delete</button>
       </div>
-      <!-- <div class="lastRow">
+      <div class="lastRow">
         <div class="item-details-column">&nbsp;</div>
         <div class="item-details-column">&nbsp;</div>
-        <div class="item-details-column">Total Amount</div>
-        <div class="item-details-column">{{total}}</div>
-        <button type="submit" (click)="removeItem(name, price, count)">Checkout</button>
-      </div> -->
+        <div class="item-details-column">&nbsp;</div>
+        <div class="item-details-column">&nbsp;</div>
+        <button type="submit" (click)="checkOut()">Checkout</button>
+      </div>
     </form>
 
   </div>
