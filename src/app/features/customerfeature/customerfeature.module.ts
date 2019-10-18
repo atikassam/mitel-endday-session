@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes:Routes=[
+    { path:"",component:CustomerListComponent },
     { path:"add",component:CustomerAddComponent },
     { path:"list",component:CustomerListComponent },
     { path:"orders",component:CustomerOrdersComponent }
