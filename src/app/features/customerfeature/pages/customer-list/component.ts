@@ -12,9 +12,7 @@ export class CustomerListComponent implements OnInit{
     constructor(private store:Store<any>){}
     ngOnInit(): void {
         this.store.dispatch(CustomerActions.GetCustomers());
-        let result=this.store.select('customers')
-        result.subscribe(console.log)
-        result.subscribe((state)=>{
+        this.store.select('customers').subscribe((state)=>{
             console.log(state)
             this.customers=state.all_customers})
     }
