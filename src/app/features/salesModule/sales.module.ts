@@ -4,6 +4,7 @@ import { InvoiceComponent } from './components/invoice/component';
 import { SalesRoutingModule } from './sales-routing.module';
 import { CommonModule } from '@angular/common';
 import { DemoMaterialModule } from '../../shared/material-modules.module';
+import { getItemListService } from './services/getItemListApi.services';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,6 @@ import { DemoMaterialModule } from '../../shared/material-modules.module';
         SalesRoutingModule,
         DemoMaterialModule
     ],
-    providers: []
+    providers: [getItemListService]
 })
 export class SalesModule { }

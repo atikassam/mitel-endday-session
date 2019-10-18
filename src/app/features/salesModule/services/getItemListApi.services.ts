@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
 
 @Injectable({
     providedIn: "root"
 })
-export class getItemListSerice {
+export class getItemListService {
 
     constructor(private _http: HttpClient) {
 
@@ -14,11 +15,16 @@ export class getItemListSerice {
 
 
     getitemList() {
+        console.log("Loaded");
         return this._http.get(`http://localhost:3000/items`, {
-            // withCredentials: true
-        })
-    }
 
+            // withCredentials: true
+        }).pipe(
+            map((data: any) => {
+                console.log("data", data);
+            })
+        )
+    }
 }
 
 
