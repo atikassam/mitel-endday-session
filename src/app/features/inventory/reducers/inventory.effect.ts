@@ -35,14 +35,29 @@ export class InventoryEffects {
             new Observable((s) => s.next({ items: this.items }))
                 .pipe(
                     mergeMap(items => {
-                      console.log('Inside InventoryEffects')
+                      console.log(items,'Inside InventoryEffects')
                         return of(InventoryAction.SetItems({ items }))
                     }),
                     catchError(() => EMPTY)
                 ))
     )
     );
+    
+    detailEffect$ = createEffect(() => this.actions$.pipe(
+      ofType(InventoryAction.GetItemDetail),
+      mergeMap((action) =>
+          //   this.apiService.....
+          new Observable((s) => s.next({ items: this.items[action.id -1] }))
+              .pipe(
+                  mergeMap(itemDetails => {
+                    console.log(itemDetails,"from reducer details")
+                      return of(InventoryAction.SetItemDetail({ itemDetails }))
+                  }),
+                  catchError(() => EMPTY)
+              ))
+  )
+  );
     constructor(private actions$: Actions) {
-        this.loadMovies$.subscribe(console.log)
+        // this.loadMovies$.subscribe(console.log)
     }
 }

@@ -9,11 +9,10 @@ import { AddItemComponent } from './pages/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from 'src/app/features/inventory/reducers';
-import { EffectsModule } from '@ngrx/effects';
 import {DemoMaterialModule} from "../../shared/material-modules.module";
+import { reducers } from 'src/app/features/inventory/reducers';
 import { InventoryEffects } from './reducers/inventory.effect';
-
+import { EffectsModule } from '@ngrx/effects';
 
 
 const routes: Routes = [

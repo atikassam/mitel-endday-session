@@ -13,12 +13,12 @@ const _inventoryReducer = createReducer<any>(
 
     return { ...state, selected_item_list: data.items }
   }),
-//   on(InventoryAction.SetItemDetail, (state, action) => {
-//     let { type, ...data } = action;
-//     console.log(data.items, 'store list reducer');
+  on(InventoryAction.SetItemDetail, (state, action) => {
+    let { type, ...data } = action;
+    console.log(data, 'inventory detail reducer');
 
-//     return { ...state, selected_item_list: data.items }
-//   })
+    return { ...state, selected_item: data.itemDetails }
+  })
 );
 
 export function inventoryReducer(state: State<typeof initialState> | undefined, action: Action) {
