@@ -5,4 +5,6 @@ export class InventoryAction{
     public static GetItemDetail = createAction("[Api item details call]",props<{id:any}>())
     public static SetItems = createAction("[Display item]",props<{items:any}>())
     public static SetItemDetail = createAction("[Display item details]",props<{itemDetails:any}>())
+    public static AddItems = createAction("[Add item]",props<{item:any}>())
+    public static AddItemResponse = createAction("[Add Item Done]",props<{}>())
 }

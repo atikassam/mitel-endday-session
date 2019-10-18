@@ -57,6 +57,23 @@ export class InventoryEffects {
               ))
   )
   );
+
+
+  adddetailEffect$ = createEffect(() => this.actions$.pipe(
+    ofType(InventoryAction.AddItems),
+    mergeMap((action) =>
+        //   this.apiService.....
+        new Observable((s) => s.next({ items: action.item }))
+            .pipe(
+                mergeMap(itemDetails => {
+                  console.log(itemDetails,"from add item affect")
+                    return of(InventoryAction.AddItemResponse({  }))
+                }),
+                catchError(() => EMPTY)
+            ))
+)
+);
+
     constructor(private actions$: Actions) {
         // this.loadMovies$.subscribe(console.log)
     }
