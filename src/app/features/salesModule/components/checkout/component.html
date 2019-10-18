@@ -1,0 +1,24 @@
+<h1>Check out Page</h1>
+
+<div class="col-xs-12">
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Item Name" value="Apple iPhone">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+
+      <input matInput placeholder="Item Price" value="$100">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Available Quantity" value="10">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+
+</div>
