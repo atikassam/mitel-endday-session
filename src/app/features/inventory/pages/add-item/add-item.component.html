@@ -1,1 +1,57 @@
-<p>add-item works!</p>
+<app-container>
+<div class="main-container">
+    <mat-card class="login-container">
+      <mat-card-title>
+        Add Inventory Item
+      </mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <form #inventoryFormElement="ngForm">
+          <mat-form-field>
+            <input matInput placeholder="Name" required name="itemname" [(ngModel)]="inventory.name"
+                   #name="ngModel">
+  
+            <mat-error *ngIf="name.hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <input matInput placeholder="Description" required name="itemdesc" [(ngModel)]="inventory.description"
+                   #description="ngModel">
+  
+            <mat-error *ngIf="description.hasError('required')">
+              Description is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br/>
+  
+          <mat-form-field>
+            <input matInput placeholder="Quantity" required name="itemquantity" [(ngModel)]="inventory.quantity"
+                   #quantity="ngModel">
+  
+            <mat-error *ngIf="quantity.hasError('required')">
+                Quantity is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field>
+            <input matInput placeholder="Price" required name="itemprice" [(ngModel)]="inventory.price"
+                   #price="ngModel">
+  
+            <mat-error *ngIf="price.hasError('required')">
+                Quantity is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <button (click)="onAddSubmit()" mat-flat-button color="primary" [disabled]="!inventoryFormElement.form.valid">Login</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</app-container>
+
+
+  
