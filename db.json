@@ -64,5 +64,17 @@
       "category": "unknown",
       "last_updated_by": "User name"
     }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "customer": {
+        "id": 1,
+        "name": "Customer name",
+        "address": "Customer address"
+      },
+      "total": "100",
+      "date": 123456789
+    }
   ]
 }

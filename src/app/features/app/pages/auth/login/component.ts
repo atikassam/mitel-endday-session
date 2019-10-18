@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.store.subscribe(console.log)
     this.store.select('application')
-      .pipe(map((d) => _.get(d, 'auth.is_loggedin')))
+      .pipe(map((state) => _.get(state, 'auth.is_loggedin')))
       .subscribe((is_loggedin) => {
         if (is_loggedin) {
           this.router.navigate([''])
