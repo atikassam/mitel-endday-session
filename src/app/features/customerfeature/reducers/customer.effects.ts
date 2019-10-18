@@ -38,7 +38,7 @@ export class CustomerEffects {
   getCustomerOrders$ = createEffect(() => this.actions$.pipe(
     ofType(CustomerActions.GetCustomerOrders),
     mergeMap((action) =>
-      this.apiService.getCustomer(action.id)
+      this.apiService.getCustomersOrders(action.id)
       .pipe(
         mergeMap(orders => {
           console.log(orders)
