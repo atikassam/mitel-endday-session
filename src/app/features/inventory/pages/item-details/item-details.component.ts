@@ -66,7 +66,7 @@ export class ItemDetailsComponent implements OnInit {
     }))
   }
   getItemDetailsById(item:any){
-    this.item = item.items;
+    this.item = item;
   }
 
 }

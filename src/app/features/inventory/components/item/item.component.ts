@@ -14,7 +14,7 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
   onClickItem() {
-    this.router.navigate([`/inventory/details/${ this.item._id }`]);
+    this.router.navigate([`/inventory/details/${ this.item.id }`]);
     
   }
 

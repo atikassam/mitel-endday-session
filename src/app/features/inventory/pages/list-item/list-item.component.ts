@@ -23,12 +23,13 @@ export class ListItemComponent implements OnInit {
   constructor(private store:Store<any>) { }
 
   ngOnInit() {
+    // this.store.subscribe(console.log)
     this.store.select('inventory')
       .pipe(map((d) => _.get(d, 'inventoryreducer.selected_item_list')))
       .subscribe((data) => {
-        console.log(data);
+        console.log("Inside Item List",data);
         if (data) {
-          this.items = data.items;
+          this.items = data;
         }
       })
     this.store.dispatch(InventoryAction.GetItems());
