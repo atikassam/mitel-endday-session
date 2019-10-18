@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-
+import { CustomerSchema } from '../../components/customer/component';
 @Component({
     selector:'',
     templateUrl:'./component.html',
     styleUrls:['./component.scss']
 })
 export class CustomerOrdersComponent{
-    customer={
+    customer:CustomerSchema={
+        id:1,
         name:"customer1",
         email:"email1",
         phoneno:1234567890,

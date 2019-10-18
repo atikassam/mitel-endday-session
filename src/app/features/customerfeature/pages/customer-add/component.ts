@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CustomerSchema } from '../../components/customer/component';
 @Component({
     selector:'',
     templateUrl:'./component.html',
