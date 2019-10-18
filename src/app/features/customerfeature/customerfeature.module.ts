@@ -8,6 +8,10 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { customerreducers,metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { CustomerEffects } from './reducers/customer.effects';
 
 const routes:Routes=[
     { path:"",component:CustomerListComponent },
@@ -17,7 +21,20 @@ const routes:Routes=[
 ]
 @NgModule({
     declarations: [ CustomerAddComponent,CustomerListComponent,CustomerOrdersComponent,CustomerComponent],
-    imports: [ RouterModule.forChild(routes) ,CommonModule,MatCardModule,SharedModule,FormsModule],
+    imports: [ 
+        RouterModule.forChild(routes) ,
+        CommonModule,
+        MatCardModule,
+        SharedModule,
+        FormsModule,
+        StoreModule.forRoot(customerreducers, {
+            metaReducers,
+            runtimeChecks: {
+              strictStateImmutability: true,
+              strictActionImmutability: true
+            }
+          }),
+        EffectsModule.forRoot([CustomerEffects])],
     exports: [ RouterModule ],
 })
 export class CustomerModule{
