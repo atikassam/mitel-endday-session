@@ -3,7 +3,7 @@ import { InventoryAction } from './inventory.action';
 
 const initialState = {
   selected_item: null,
-  selected_item_list:null
+  selected_item_list:[]
 }
 const _inventoryReducer = createReducer<any>(
   initialState,
@@ -11,7 +11,7 @@ const _inventoryReducer = createReducer<any>(
     let { type, ...data } = action;
     console.log(data, 'inventory reducer');
 
-    return { ...state, selected_item: data.items }
+    return { ...state, selected_item_list: data.items }
   }),
 //   on(InventoryAction.SetItemDetail, (state, action) => {
 //     let { type, ...data } = action;

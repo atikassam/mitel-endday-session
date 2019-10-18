@@ -9,9 +9,10 @@ import { AddItemComponent } from './pages/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from 'src/app/reducers';
+import { reducers } from 'src/app/features/inventory/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import {DemoMaterialModule} from "../../shared/material-modules.module";
+import { InventoryEffects } from './reducers/inventory.effect';
 
 
 
@@ -29,7 +30,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule, FormsModule, DemoMaterialModule, SharedModule,
     StoreModule.forFeature("inventory", reducers as any), 
-    EffectsModule.forFeature([])],
+    EffectsModule.forFeature([InventoryEffects])],
   exports: [RouterModule],
 
 

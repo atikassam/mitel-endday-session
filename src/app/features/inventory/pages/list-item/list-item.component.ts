@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getItemListService } from 'src/app/features/salesModule/services/getItemListApi.services';
 import { InventoryAction } from '../../reducers/inventory.action';
+import * as _ from 'lodash'
+import {map} from "rxjs/operators";
 
 interface ItemSchema {
   [key: string]: any
@@ -17,30 +19,19 @@ interface ItemSchema {
 
 
 export class ListItemComponent implements OnInit {
-  public items: ItemSchema[] = [
-    {
-      _id: 1,
-      name: "Mobile",
-      price: 7000,
-      quantity: 5000
-    },
-    {
-      _id: 2,
-      name: "Laptop",
-      price: 50000,
-      quantity: 500
-    },
-    {
-      _id: 3,
-      name: "Desktop",
-      price: 30000,
-      quantity: 1000
-    }
-  ]
+  public items: any;
   constructor(private store:Store<any>) { }
 
   ngOnInit() {
-    this.store.dispatch(InventoryAction.GetItems);
+    this.store.select('inventory')
+      .pipe(map((d) => _.get(d, 'inventoryreducer.selected_item_list')))
+      .subscribe((data) => {
+        console.log(data);
+        if (data) {
+          this.items = data.items;
+        }
+      })
+    this.store.dispatch(InventoryAction.GetItems());
     
   }
 
