@@ -1,1 +1,12 @@
-<h1>Invoice Component</h1>
+<app-container>
+  <h1>Invoice Component</h1>
+</app-container>
+
+
+<h1>Customer ID : {{customerId}}</h1>
+<div *ngFor="let item of orderDetails"
+  style="margin-bottom: 20px; display: flex; flex-direction: row; align-items: center; width: 75%">
+  <div class="">Item name: {{item.name}}</div>
+  <div class="">Item Price: {{item.price}}</div>
+  <div class="">Item count: {{item.count}}</div>
+</div>
