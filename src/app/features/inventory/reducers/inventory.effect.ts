@@ -35,7 +35,7 @@ export class InventoryEffects {
             new Observable((s) => s.next({ items: this.items }))
                 .pipe(
                     mergeMap(items => {
-                      console.log('dthd')
+                      console.log('Inside InventoryEffects')
                         return of(InventoryAction.SetItems({ items }))
                     }),
                     catchError(() => EMPTY)
