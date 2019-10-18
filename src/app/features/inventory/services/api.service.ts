@@ -18,4 +18,10 @@ export class ApiServices {
     addItem(item: any): any {
         return this.http.post(`${ApiServices._BASE_}/items`, item)
     }
+    deletItem(id: any): any {
+        return this.http.post(`${ApiServices._BASE_}/items`, id)
+    }
+    updateItem(item: any): any {
+        return this.http.post(`${ApiServices._BASE_}/items`, item)
+    }
 }
