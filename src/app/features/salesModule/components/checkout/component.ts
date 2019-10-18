@@ -4,6 +4,8 @@ import { MatInputModule } from '@angular/material/input';
 import { getItemListService } from '../../services/getItemListApi.services';
 import { ItemDetailsComponent } from 'src/app/features/inventory/pages/item-details/item-details.component';
 import { Router, RouterLink } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { OrderAction } from '../../reducers/reducers/actions';
 
 
 @Component({
@@ -14,12 +16,12 @@ import { Router, RouterLink } from '@angular/router';
 
 export class CheckoutComponent implements OnInit {
 
-    // @Input() items: ItemDetailsSchema;
+    //@Input() items: ItemDetailsSchema;
 
 
     itemsList = [];
 
-    constructor(private getItemListService: getItemListService, private _router: Router) {
+    constructor(private getItemListService: getItemListService, private _router: Router, private store: Store<any>) {
 
     }
 
@@ -33,16 +35,15 @@ export class CheckoutComponent implements OnInit {
     }
 
     addItem(name, price, count) {
-
         this.itemsList.push({
             "name": name,
             "price": price,
             "count": count
         })
-
     }
 
     checkOut() {
+        this.store.dispatch(OrderAction.StoreOrderData({ orderDetails: this.itemsList }))
         this._router.navigateByUrl("/sales/invoice");
     }
 

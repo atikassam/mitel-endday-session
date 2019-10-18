@@ -7,6 +7,9 @@ import { DemoMaterialModule } from '../../shared/material-modules.module';
 import { getItemListService } from './services/getItemListApi.services';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers } from './reducers/reducers';
 
 @NgModule({
     declarations: [
@@ -18,7 +21,9 @@ import { FormsModule } from '@angular/forms';
         SalesRoutingModule,
         SharedModule,
         DemoMaterialModule,
-        FormsModule
+        FormsModule,
+        StoreModule.forFeature("Order", reducers),
+        EffectsModule.forFeature([])
     ],
     providers: [getItemListService]
 })
