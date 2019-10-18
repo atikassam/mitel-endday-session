@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
     styleUrls:['./component.scss']
 })
 export class CustomerAddComponent{
+    customer: any = {}
 
+    onSubmit() {
+        console.log(this.customer, 'com')
+       // this.store.dispatch(MyAuthAction.Login({ credentials: this.credential }))
+      }
 }

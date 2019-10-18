@@ -7,6 +7,7 @@ import { CustomerComponent } from './components/customer/component';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
     { path:"",component:CustomerListComponent },
@@ -16,7 +17,7 @@ const routes:Routes=[
 ]
 @NgModule({
     declarations: [ CustomerAddComponent,CustomerListComponent,CustomerOrdersComponent,CustomerComponent],
-    imports: [ RouterModule.forChild(routes) ,CommonModule,MatCardModule,SharedModule],
+    imports: [ RouterModule.forChild(routes) ,CommonModule,MatCardModule,SharedModule,FormsModule],
     exports: [ RouterModule ],
 })
 export class CustomerModule{

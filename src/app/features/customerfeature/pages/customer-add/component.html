@@ -1,1 +1,21 @@
-its customer add
+
+    <app-container>
+    <mat-card>
+    <mat-card-title>Add customer </mat-card-title>
+    <mat-card-content>
+            <div >
+    <form #formElement="ngForm">
+    Customer Name :  <input  placeholder="Customer Name"  [(ngModel)]="customer.name" name="cusomername" >
+    <br>
+    Customer Phone :  <input  placeholder="Customer Phone" [(ngModel)]="customer.Phone" name="cusomerphone" >
+    <br>
+    Customer Address : <input  type ="text" Customer Address name="CustomerAddress" [(ngModel)]="customer.Address" >
+    <br>
+    Customer email : <input  placeholder="Customer email Address" name="CustomerEmailAddress"[(ngModel)]="customer.email">
+    <br>
+    <button (click)="onSubmit()">Add Customer</button>
+</form>
+</div>
+    </mat-card-content>
+</mat-card>
+</app-container>
