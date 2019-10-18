@@ -40,7 +40,8 @@ export class ListItemComponent implements OnInit {
   constructor(private store:Store<any>) { }
 
   ngOnInit() {
-    this.store.dispatch(InventoryAction.GetItems)
+    this.store.dispatch(InventoryAction.GetItems);
+    
   }
 
 }

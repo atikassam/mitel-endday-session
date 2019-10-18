@@ -11,7 +11,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from 'src/app/reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { DemoMaterialModule } from 'src/app/shared/material-modules.module';
+import {DemoMaterialModule} from "../../shared/material-modules.module";
+
 
 
 const routes: Routes = [
