@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { customerreducers,metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CustomerEffects } from './reducers/customer.effects';
+import { DemoMaterialModule } from 'src/app/shared/material-modules.module';
 
 const routes:Routes=[
     { path:"",component:CustomerListComponent },
@@ -28,6 +29,7 @@ const routes:Routes=[
         SharedModule,
         FormsModule,
         MatButtonModule,
+        DemoMaterialModule,
         StoreModule.forFeature('customer',customerreducers),
         EffectsModule.forFeature([CustomerEffects])],
     exports: [ RouterModule ],

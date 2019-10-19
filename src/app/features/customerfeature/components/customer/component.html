@@ -1,5 +1,5 @@
 <div>
-    <mat-card class="customer-container" routerLink="{{customer.id}}/orders" >
+    <mat-card class="customer-container" >
         <mat-card-content>
         <div *ngIf="customer">
             <h1> Name: {{ customer.name }} </h1>
@@ -8,6 +8,12 @@
             <p> Address: {{ customer.address }} </p>
         </div>
         </mat-card-content>
+            <button routerLink="/customers/{{customer.id}}/orders" mat-flat-button color="primary">Orders
+                <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
+            </button>
+            <button (click)="onDelete()" mat-flat-button color="warn">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+            </button>    
     </mat-card>
 </div>
   

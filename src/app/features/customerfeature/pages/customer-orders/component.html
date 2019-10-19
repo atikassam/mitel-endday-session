@@ -1,15 +1,20 @@
 <app-container>
-    <h4 class="list-title-customer">Name: {{customer.name}} </h4>
-    <h5 class="list-title">Customer Orders</h5>
-    <div class="list-container">
-        <div *ngFor="let order of customerorders">
-            <mat-card class="order-container">
-                <mat-card-content>
-                    <h5>Order Id: {{ order.id }}</h5>
-                    <p>Order Date: {{ order.date }}</p>
-                    <p>Order Total Price: {{ order.total }}</p>
-                </mat-card-content>
-            </mat-card>
+    <div class="main-container">
+        <button (click)="onBackClick()" mat-flat-button color="accent" >
+            <mat-icon aria-hidden="false" aria-label="Example home icon">backspace</mat-icon> Back
+        </button>
+        <h4 class="list-title-customer">Name: {{customer.name}} </h4>
+        <h5 class="list-title">Customer Orders</h5>
+        <div class="list-container">
+            <div *ngFor="let order of customerorders">
+                <mat-card class="order-container">
+                    <mat-card-content>
+                        <h5>Order Id: {{ order.id }}</h5>
+                        <p>Order Date: {{ order.date }}</p>
+                        <p>Order Total Price: {{ order.total }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
 </app-container>

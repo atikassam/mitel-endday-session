@@ -63,6 +63,19 @@ export class CustomerEffects {
     )
   ); 
     
+  deleteCustomer$ = createEffect(() => this.actions$.pipe(
+    ofType(CustomerActions.DeleteCustomers),
+    mergeMap((action) =>
+      this.apiService.deleteCustomer(action.id)
+      .pipe(
+        mergeMap(customer => {
+          console.log(customer)
+         return of(CustomerActions.GetCustomers())
+        }),
+        catchError(() => EMPTY)
+      )),
+    )
+  ); 
 
   constructor(private actions$: Actions, private apiService:CustomerApiService) {
     console.log("Effect constructor");

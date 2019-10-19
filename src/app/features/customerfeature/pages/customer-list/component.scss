@@ -1,5 +1,4 @@
-.list-title {
-    margin: 10px;
+.list-title {  
     color: green;
   }
   .list-container {
@@ -8,4 +7,9 @@
   
     display: flex;
     flex-direction: row;
+  }
+
+  .main-container {
+    height: 100%;
+    background-image: url("~src/assets/img/bg.jpg");
   }

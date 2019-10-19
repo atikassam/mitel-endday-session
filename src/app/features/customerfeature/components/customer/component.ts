@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { CustomerActions } from '../../reducers/customer.actions';
+
 
 export interface CustomerSchema {
     id:number
@@ -15,4 +18,10 @@ export interface CustomerSchema {
 })
 export class CustomerComponent{
     @Input() customer:CustomerSchema
+    constructor(private store:Store<any>){}
+    @Output() onDeleteCustomer:EventEmitter<any>=new EventEmitter<any>();
+    onDelete()
+    {
+        this.onDeleteCustomer.emit(this.customer.id)
+    }
 }

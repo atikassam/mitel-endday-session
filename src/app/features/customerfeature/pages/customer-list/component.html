@@ -1,7 +1,11 @@
 <app-container>
-    <button routerLink="add" mat-flat-button color="accent" >Add Customer</button>
-    <h2 class="list-title">Customer list</h2>
-    <div class="list-container">
-    <app-customer  *ngFor="let customer of customers" [customer]="customer"></app-customer>
+    <div class="main-container">
+        <button routerLink="/customers/add" mat-flat-button color="accent" >
+            <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon> Add Customer
+        </button>
+        <h2 class="list-title">Customer list</h2>
+        <div class="list-container">
+            <app-customer  *ngFor="let customer of customers" [customer]="customer" (onDeleteCustomer)="onDelete($event)"></app-customer>
+        </div>
     </div>
 </app-container>

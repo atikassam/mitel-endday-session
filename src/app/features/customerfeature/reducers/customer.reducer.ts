@@ -6,6 +6,7 @@ const initialState = {
   all_customers: null,
   customer_all_orders:null,
   selected_customer:null,
+  is_customerAdd :false
 }
 const _customerReducer = createReducer<any>(
   initialState,

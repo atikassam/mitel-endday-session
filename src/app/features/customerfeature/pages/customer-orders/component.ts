@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CustomerActions } from '../../reducers/customer.actions';
 import { map } from 'rxjs/operators';
 import * as _ from 'lodash'
+import { Location } from '@angular/common';
 
 @Component({
     selector:'',
@@ -33,7 +34,7 @@ export class CustomerOrdersComponent implements OnInit{
             totalprice:"2000"
         }
     ]
-    constructor(private store:Store<any>,private router: ActivatedRoute){}
+    constructor(private store:Store<any>,private router: ActivatedRoute,private locaton:Location){}
     ngOnInit(): void {
         this.router.params.subscribe((value => {
 
@@ -50,5 +51,9 @@ export class CustomerOrdersComponent implements OnInit{
             this.store.dispatch(CustomerActions.GetCustomer({ id: value.id }));
             this.store.dispatch(CustomerActions.GetCustomerOrders({ id: value.id }))
           }))
+    }
+
+    onBackClick(){
+        this.locaton.back();
     }
 }

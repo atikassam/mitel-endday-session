@@ -1,0 +1,28 @@
+.customeradd-actions {
+    padding: 16px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.customeradd-container form {
+  padding-top: 16px;
+  //min-height: 400px;
+}
+
+.customeradd-container mat-form-field {
+  width: 100%;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("~src/assets/img/bg.jpg");
+}
+.customeradd-container {
+  width: 360px;
+
+}

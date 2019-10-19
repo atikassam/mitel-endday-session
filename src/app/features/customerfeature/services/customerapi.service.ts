@@ -34,6 +34,11 @@ export class CustomerApiService {
     return this.http.get(`${CustomerApiService._BASE_}/customer/${customerid}/orders`, {
     })
   }
+
+  deleteCustomer(customerid) {
+    console.log("From API Service deleteCustomer :"+customerid);
+    return this.http.delete(`${CustomerApiService._BASE_}/customers/${customerid}`)
+  }
 }
   
 
