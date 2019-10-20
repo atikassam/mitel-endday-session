@@ -39,6 +39,11 @@ export class CustomerApiService {
     console.log("From API Service deleteCustomer :"+customerid);
     return this.http.delete(`${CustomerApiService._BASE_}/customers/${customerid}`)
   }
+
+  updateCustomer(customer) {
+    console.log("From API Service updateCustomer :"+customer);
+    return this.http.put(`${CustomerApiService._BASE_}/customers/${customer.id}/`,customer)
+  }
 }
   
 

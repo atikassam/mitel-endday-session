@@ -11,8 +11,11 @@
             <button routerLink="/customers/{{customer.id}}/orders" mat-flat-button color="primary">Orders
                 <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
             </button>
-            <button (click)="onDelete()" mat-flat-button color="warn">
+            <button (click)="onDelete()" mat-flat-button >
                     <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+            </button> 
+            <button routerLink="/customers/update/{{customer.id}}/" mat-flat-button >
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
             </button>    
     </mat-card>
 </div>

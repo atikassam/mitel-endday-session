@@ -17,6 +17,7 @@ import { DemoMaterialModule } from 'src/app/shared/material-modules.module';
 const routes:Routes=[
     { path:"",component:CustomerListComponent },
     { path:"add",component:CustomerAddComponent },
+    { path:"update/:customerid",component:CustomerAddComponent },
     { path:"list",component:CustomerListComponent },
     { path:":id/orders",component:CustomerOrdersComponent }
 ]

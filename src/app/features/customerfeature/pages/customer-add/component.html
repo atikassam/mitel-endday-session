@@ -1,12 +1,13 @@
 <app-container>
     <div class="main-container">
         <mat-card class="customeradd-container">
-            <mat-card-title>Add customer </mat-card-title>
+            <mat-card-title *ngIf="!isaddform">Add customer </mat-card-title>
+            <mat-card-title *ngIf="isaddform">Update customer </mat-card-title>
             <mat-card-content>
                 <form #formElement="ngForm">
                 <mat-form-field class="example-full-width">
                     <mat-label>Customer Name</mat-label>
-                    <input matInput placeholder="User Name" required [(ngModel)]="customer.name" name="customername"
+                    <input matInput placeholder="User Name" required [(ngModel)]="customer.name" name="name"
                             #name="ngModel">
 
                     <mat-error *ngIf="name.hasError('required')">
@@ -16,7 +17,7 @@
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Customer Email</mat-label>
-                    <input matInput placeholder="Email Id" email required [(ngModel)]="customer.email" name="customeremail"
+                    <input matInput placeholder="Email Id" email required [(ngModel)]="customer.email" name="email"
                             #email="ngModel">
                     
                     <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
@@ -29,7 +30,7 @@
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Customer Phone</mat-label>
-                    <input matInput placeholder="Phone Number" required [(ngModel)]="customer.phoneno" name="customerphoneno"
+                    <input matInput placeholder="Phone Number" required [(ngModel)]="customer.phoneno" name="phoneno"
                             #phoneno="ngModel">
 
                     <mat-error *ngIf="phoneno.hasError('required')">
@@ -39,15 +40,18 @@
 
                 <mat-form-field class="example-full-width">
                     <mat-label>Customer Address</mat-label>
-                    <input matInput placeholder="Address" required [(ngModel)]="customer.address" name="customeraddress"
+                    <input matInput placeholder="Address" required [(ngModel)]="customer.address" name="address"
                             #address="ngModel">
 
                     <mat-error *ngIf="address.hasError('required')">
                         Address is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <div class="customeradd-actions">
+                <div class="customeradd-actions" *ngIf="!isaddform">
                     <button (click)="onSubmit()" mat-flat-button color="primary" [disabled]="!formElement.form.valid">Add Customer</button>
+                </div>
+                <div class="customeradd-actions" *ngIf="isaddform">
+                    <button (click)="onUpdate()" mat-flat-button color="primary" [disabled]="!formElement.form.valid">Update Customer</button>
                 </div>
                 </form>
             </mat-card-content>

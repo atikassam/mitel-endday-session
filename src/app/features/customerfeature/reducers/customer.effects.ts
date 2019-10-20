@@ -63,13 +63,28 @@ export class CustomerEffects {
     )
   ); 
     
+   
   deleteCustomer$ = createEffect(() => this.actions$.pipe(
-    ofType(CustomerActions.DeleteCustomers),
+    ofType(CustomerActions.DeleteCustomer),
     mergeMap((action) =>
       this.apiService.deleteCustomer(action.id)
       .pipe(
-        mergeMap(customer => {
-          console.log(customer)
+        mergeMap(customers=> {
+          console.log(customers)
+         return of(CustomerActions.GetCustomers())
+        }),
+        catchError(() => EMPTY)
+      )),
+    )
+  ); 
+
+  updateCustomer$ = createEffect(() => this.actions$.pipe(
+    ofType(CustomerActions.UpdateCustomer),
+    mergeMap((action) =>
+      this.apiService.updateCustomer(action.customer)
+      .pipe(
+        mergeMap(customers => {
+          console.log(customers)
          return of(CustomerActions.GetCustomers())
         }),
         catchError(() => EMPTY)

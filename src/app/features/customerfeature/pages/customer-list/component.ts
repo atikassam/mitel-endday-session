@@ -25,7 +25,7 @@ export class CustomerListComponent implements OnInit{
     onDelete(event)
     {
         console.log(event+" customer is deleting from list")
-        this.store.dispatch(CustomerActions.DeleteCustomers({id:event}))
+        this.store.dispatch(CustomerActions.DeleteCustomer({id:event}))
     }
     /* customers:CustomerSchema[] = [
         {

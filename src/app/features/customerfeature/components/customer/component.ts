@@ -4,7 +4,7 @@ import { CustomerActions } from '../../reducers/customer.actions';
 
 
 export interface CustomerSchema {
-    id:number
+    id:number,
     name: string,
     email: string,
     phoneno: number,

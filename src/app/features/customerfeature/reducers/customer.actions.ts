@@ -14,5 +14,7 @@ export class CustomerActions {
   public static readonly addCustomer=createAction('[Customer api] add customer',props<{ customer: any }>())
   //public static readonly addCustomer=createAction('[Customer api] add customer',props<{ customer: any }>())
 
-  public static readonly DeleteCustomers = createAction('[Customer api] delete customer',props<{id:number}>())
+  public static readonly DeleteCustomer = createAction('[Customer api] delete customer',props<{id:number}>())
+
+  public static readonly UpdateCustomer = createAction('[Customer api] update customer',props<{customer:any}>())
 }
